@@ -1,0 +1,125 @@
+.header {
+  background-image: url("../img/head_banner.png");
+  background-size: cover;
+  min-height: 100vh;
+  position: relative;
+  nav {
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+  }
+  .arrow {
+    position: absolute;
+    display: block;
+    left: 50%;
+    bottom: 9rem;
+    margin: 5rem auto 0;
+    width: 2rem;
+    height: 2rem;
+    border-bottom: 0.5rem solid #fff;
+    border-right: 0.5rem solid #fff;
+    transform: rotate(45deg);
+    animation: arrowMove 1s linear infinite;
+  }
+  @keyframes arrowMove {
+    100% {
+      bottom: 7.5rem;
+    }
+  }
+}
+.nav {
+  position: relative;
+  display: flex;
+  padding: 1rem 0;
+  @include responsive("sm") {
+    flex-direction: column;
+  }
+  .logo-brand {
+    a {
+      font-size: 3rem;
+      font-weight: 600;
+      color: $color-primary;
+      text-decoration: none;
+    }
+  }
+  &_list {
+    list-style: none;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    transform-origin: top;
+    transition: all 2s ease;
+    @include responsive("sm") {
+      align-items: flex-start;
+      width: 100%;
+      flex-direction: column;
+      background: #fff;
+    }
+  }
+  &_item:not(last-child) {
+    margin-left: 2rem;
+    font-weight: 600;
+    @include responsive("sm") {
+      margin-left: 0;
+      padding-top: 1rem;
+    }
+  }
+  &_link:link,
+  &_link:visited {
+    color: $color-primary;
+    text-decoration: none;
+    padding-bottom: 0.4rem;
+    border-bottom: 0.2rem transparent solid;
+    transition: all 1s;
+  }
+  &_link:hover {
+    border-bottom: 0.2rem $color-primary solid;
+  }
+  @include responsive("xl") {
+    padding: 1rem 2rem;
+  }
+  #toggle {
+    display: none;
+  }
+  &_toggle {
+    display: none;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    &:hover {
+      cursor: pointer;
+    }
+    @include responsive("sm") {
+      display: block;
+    }
+  }
+  @include responsive("sm") {
+    display: block;
+    #toggle:checked ~ .nav_list {
+      display: none;
+    }
+  }
+}
+.align {
+  padding-top: 10%;
+  @include responsive("md") {
+    padding-top: 20%;
+  }
+  @include responsive("sm") {
+    padding-top: 25%;
+  }
+  @include responsive("xs") {
+    padding-top: 35%;
+  }
+}
+.hero-content {
+  color: $color-secondary;
+  text-align: center;
+  h1 {
+    font-size: 6rem;
+  }
+  p {
+    font-size: 2rem;
+  }
+}

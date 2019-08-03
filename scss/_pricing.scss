@@ -1,0 +1,57 @@
+.pricing {
+  @include parent-padding;
+  background: $bg-secondary;
+}
+.prices-wrapper {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  @include responsive("xs") {
+    flex-direction: column;
+  }
+  .price-unit {
+    box-shadow: 0 0 2rem #ccc;
+    flex: 0 0 30%;
+    margin: 2rem;
+    text-align: center;
+    padding-bottom: 5rem;
+    transition: all 0.5s;
+    background: #fff;
+    @include responsive("xl") {
+      padding-bottom: 2rem;
+    }
+    @include responsive("xs") {
+      flex: 0 0 70%;
+    }
+    & ul {
+      list-style: none;
+    }
+    &_header {
+      background: #3949ab;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+      padding: 6rem 0;
+      color: #fff;
+      font-size: 2rem;
+      & p > span {
+        font-weight: 600;
+        font-size: 3rem;
+      }
+      @include responsive("xl") {
+        padding: 4rem 0;
+      }
+    }
+    &_content {
+      margin: 2.5rem 0;
+      li {
+        margin: auto;
+        max-width: 18rem;
+        padding: 1.4rem;
+        border-bottom: 0.1rem solid rgba(0, 0, 0, 0.3);
+      }
+    }
+    &:hover {
+      box-shadow: 0 0 3rem #444;
+      transform: translateY(-2rem);
+    }
+  }
+}

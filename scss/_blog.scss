@@ -1,0 +1,40 @@
+.blog {
+  @include parent-padding;
+  background-color: #e4fdf9;
+}
+.blog-wrapper {
+  margin: 10rem 0 3rem;
+  .blog-post {
+    display: flex;
+    @include responsive("xs") {
+      display: flex;
+      flex-direction: column;
+    }
+    img {
+      flex: 0 0 50%;
+    }
+    &:nth-child(2n) img {
+      order: 2;
+    }
+    @include responsive("xs") {
+      img {
+        min-width: 100%;
+        order: 1;
+      }
+    }
+    .content {
+      padding: 2rem;
+      flex: 0 0 50%;
+      @include responsive("xs") {
+        padding: 2rem 0;
+      }
+    }
+    @include responsive("xl") {
+      img {
+        // flex: 0 0 20%;
+        max-width: 50%;
+        width: 100%;
+      }
+    }
+  }
+}

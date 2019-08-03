@@ -1,0 +1,52 @@
+// btn
+.btn {
+  display: inline-block;
+  border-radius: 0.3rem;
+  text-decoration: none;
+  font-family: $font-secondary;
+  color: #fff;
+  font-size: 2rem;
+  text-transform: uppercase;
+  border: 0.1rem solid #fff;
+  padding: 1.2rem;
+  font-weight: 400;
+  @include responsive("xs") {
+    font-size: 1.7rem;
+  }
+}
+.btn:hover {
+  background-color: #444;
+  color: #fff;
+  border: 0.2rem solid transparent;
+}
+.btn-active {
+  color: #fff;
+  background-color: #00897b;
+  border: 0.2rem solid #00897b;
+}
+.head-title {
+  font-size: 4rem;
+  text-align: center;
+}
+.paragraph-title {
+  max-width: 62rem;
+  padding-top: 2rem;
+  margin: auto;
+  text-align: center;
+}
+.link {
+  @extend .btn;
+  margin: 2rem 0;
+  color: inherit;
+  border-color: inherit;
+  padding: 0.8rem;
+  @include responsive("xs") {
+    padding: 0.5rem;
+    margin: 1rem 0;
+  }
+}
+.link:hover {
+  background: #00897b;
+  color: #fff;
+  border: 0.1rem solid #fff;
+}

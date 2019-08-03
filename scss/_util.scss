@@ -1,0 +1,21 @@
+.mt-s {
+  margin-top: 2rem;
+}
+.mt-m {
+  margin-top: 4rem;
+}
+.mt-l {
+  margin-top: 10rem;
+}
+.ml {
+  margin-left: 3rem;
+}
+.center {
+  text-align: center;
+}
+@mixin parent-padding {
+  padding: 10rem;
+  @include responsive("sm") {
+    padding: 7rem;
+  }
+}

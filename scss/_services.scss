@@ -1,0 +1,40 @@
+.services {
+  @include parent-padding;
+  background: $bg-primary;
+}
+.services_list {
+  margin-top: 11rem;
+  max-width: 100%;
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  @include responsive("xs") {
+    flex-direction: column;
+  }
+  &-item {
+    transition: all 0.5s;
+    flex: 0 0 30%;
+    background: #fff;
+    text-align: center;
+    padding: 2rem;
+    margin: 1rem;
+    box-shadow: 0 0 2rem #ccc;
+    @include responsive("md") {
+      flex: 0 0 45%;
+    }
+    h2 {
+      margin: 2rem 0;
+    }
+    i {
+      font-size: 5rem;
+    }
+  }
+  &-item:hover {
+    background: #00897b;
+    color: #fff;
+    img {
+      color: #fff;
+    }
+  }
+}

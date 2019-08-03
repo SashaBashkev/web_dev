@@ -1,0 +1,48 @@
+.team {
+  @include parent-padding;
+}
+.members {
+  margin-top: 12rem;
+  height: 30rem;
+  text-align: center;
+  .member {
+    img {
+      margin: auto;
+      display: block;
+      width: 20vw;
+    }
+    .social-links {
+      font-size: 3rem;
+      display: flex;
+      justify-content: space-evenly;
+      margin-top: 0;
+      @include responsive("sm") {
+        justify-content: center;
+      }
+      i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        color: #00897b;
+        padding: 0.5rem;
+        border-radius: 10px;
+        background-color: #f0f1f1;
+        font-size: 3rem;
+        padding: 2rem;
+        @include responsive("sm") {
+          margin: 1.5rem 0.5rem 0rem;
+          font-size: 2rem;
+        }
+        @include responsive("xl") {
+          width: 4rem;
+          height: 4rem;
+        }
+      }
+      i:hover {
+        background-color: #3949ab;
+        color: #fff;
+      }
+    }
+  }
+}

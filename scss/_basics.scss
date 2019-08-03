@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Roboto:400");
+
+// Colors & fonts
+$color-primary: #212121;
+$color-secondary: #ffffff;
+$bg-primary: #e4fdf9;
+$bg-secondary: #f0f1f1;
+$font-primary: "OpenSans", sans-serif;
+$font-secondary: "Roboto", sans-serif;
+// Break points
+$bp-xl: 1200px;
+@mixin responsive($size) {
+  @if $size == "xs" {
+    // Extra small devices (portrait phones, less than 576px)
+    @media (max-width: 575.98px) {
+      @content;
+    }
+  } @else if $size == "sm" {
+    // Small devices (landscape phones, less than 768px)
+    @media (max-width: 767.98px) {
+      @content;
+    }
+  } @else if $size == "md" {
+    // Medium devices (tablets, less than 992px)
+    @media (max-width: 991.98px) {
+      @content;
+    }
+  } @else if $size == "xl" {
+    // Large devices (desktops, less than 1200px)
+    @media (max-width: 1199.98px) {
+      @content;
+    }
+  }
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  @include responsive(md) {
+    // 9/16 = 56.25% = 9px
+    font-size: 56.25%;
+  }
+  @include responsive(sm) {
+     // 9/16 = 50% = 8px
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-primary;
+  line-height: 1.6;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.container {
+  max-width: 117rem;
+  margin: auto;
+}

@@ -1,0 +1,28 @@
+.about {
+  @include parent-padding;
+  &_list {
+    margin-top: 10rem;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    @include responsive("xs") {
+      flex-direction: column;
+    }
+    &-item {
+      flex: 0 0 30%;
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      h2 {
+        margin: 2rem 0;
+        font-weight: 600;
+      }
+      @include responsive("xs") {
+        margin: 2rem 0rem;
+      }
+    }
+  }
+}

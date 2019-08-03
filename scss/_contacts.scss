@@ -1,0 +1,86 @@
+.contact {
+  @include parent-padding;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)),
+    url("../img/contact_banner.png");
+  background-size: cover;
+  color: #fff;
+  a:link,
+  a:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+  &-details {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin: 10rem 0 5rem;
+    @include responsive("xs") {
+      flex-direction: column;
+    }
+    %logo {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      font-size: 4rem;
+      padding: 2rem;
+      border-radius: 50%;
+      margin-bottom: 2rem;
+      @include responsive("sm") {
+        margin-top: 1.5rem;
+        font-size: 2rem;
+        padding: 2rem;
+      }
+    }
+    .location i,
+    .phone i,
+    .email i {
+      @extend %logo;
+      background: #3949ab no-repeat center;
+    }
+  }
+}
+.contact-form {
+  display: block;
+  width: 100%;
+  %form-util {
+    font-size: 2rem;
+    border-radius: 0.3rem;
+    border: none;
+  }
+  .input-data {
+    display: flex;
+    justify-content: space-between;
+    & > * {
+      @extend %form-util;
+      flex-basis: 48%;
+      padding: 2rem 1rem;
+      margin-bottom: 2rem;
+    }
+    @include responsive("xs") {
+      flex-direction: column;
+    }
+  }
+  .text-data {
+    width: 100%;
+    textarea {
+      @extend %form-util;
+      margin: 0;
+      padding: 1rem 0 9rem 1rem;
+      display: block;
+      width: 100%;
+      resize: none;
+      font-family: inherit;
+      margin-bottom: 2rem;
+    }
+  }
+  .send-data {
+    text-align: right;
+    button {
+      @extend %form-util;
+      padding: 2rem;
+      background: #fff;
+      cursor: pointer;
+    }
+  }
+}

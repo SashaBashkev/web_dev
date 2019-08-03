@@ -1,0 +1,8 @@
+// Break points
+$bp-xl: 1200px;
+
+@mixin responsive {
+  @media (max-width: $point) {
+    @content;
+  }
+}
